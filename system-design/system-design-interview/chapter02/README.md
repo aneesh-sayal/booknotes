@@ -58,7 +58,7 @@ Vertical scaling == scale up. This means adding more power to your servers - CPU
 Horizontal scaling == scale out. Add more servers to your pool of resources.
 
 Vertical scaling is great when traffic is low. Simplicity is its main advantage, but it has limitations:
- * It has a hard limit. Impossible to add unlimited CPU/RAM to a single server.
+ * It has a hardware limit. Impossible to add unlimited CPU/RAM to a single server.
  * Lack of fail over and redundancy. If server goes down, whole app/website goes down with it.
 
 Horizontal scaling is more appropriate for larger applications due to vertical scaling's limitations. Its main disadvantage is that it's harder to get right.
@@ -103,6 +103,22 @@ Here's the refined request lifecycle:
  * user connects to load balancer via IP
  * HTTP request is routed to server 1 or server 2
  * web server reads user data from a slave database instance or routes data modifications to the master instance.
+
+Sharding : Method of distributing data across multiple machines
+
+Patritioning : Splitting a subset of data within the same instance.
+
+When we horizontally scale : 
+Each database server is thus a shard and we say that the data is partitioned.
+
+Advantage of sharding :
+* Handle Large records and writes
+* Increase overall storage capacity
+* Higher availability
+
+Disadvantages of sharding : 
+* Operationally  complex
+* Cross-shared queries are expensive
 
 Sweet, let's now improve the load/response time by adding a cache & shifting static content to a CDN.
 
