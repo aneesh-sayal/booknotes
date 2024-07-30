@@ -104,7 +104,7 @@ Here's the refined request lifecycle:
  * HTTP request is routed to server 1 or server 2
  * web server reads user data from a slave database instance or routes data modifications to the master instance.
 
-Sharding : Method of distributing data across multiple machines
+Sharding : Method of distributing data across multiple machines ( LAST SECTION ) 
 
 Patritioning : Splitting a subset of data within the same instance.
 
